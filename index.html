@@ -2,38 +2,118 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>F-OSnTB</title>
-    <!--link founndation css-->
-    <link rel="stylesheet" href="css/foundation.min.css"/>
-    <link rel="stylesheet" href="css/foundation-icons.css"/>
+    <script type='text/javascript' src="js/modernizr.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/foundation.min.css">
+    <link rel="stylesheet" type="text/css" href="css/docs.css">
+    <link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="css/owl.theme.css">
+    <style>
+        #owl-demo .item img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        #owl-demo .item {
+            display: block;
+            padding: 30px 0px;
+            margin: 5px;
+            color: #FFF;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            text-align: center;
+        }
+
+        .owl-theme .owl-controls .owl-buttons div {
+            padding: 5px 9px;
+        }
+
+        .owl-theme .owl-buttons i {
+            margin-top: 2px;
+        }
+
+        .owl-theme .owl-controls .owl-buttons div {
+            position: absolute;
+        }
+
+        .owl-theme .owl-controls .owl-buttons .owl-prev {
+            left: 0px;
+            top: 50%;
+        }
+
+        .owl-theme .owl-controls .owl-buttons .owl-next {
+            right: 0px;
+            top: 50%;
+        }
+    </style>
 </head>
 <body>
-<ul class="example-orbit" data-orbit>
-    <li>
-        <img src="img/satelite-orbit.jpg" alt="slide 1"/>
+<!--start responsive top bar-->
+<nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+        <li class="name">
+            <h1><a href="#"><b>S</b>hindigg</a></h1>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+    </ul>
 
-        <div class="orbit-caption">
-            Caption One.
-        </div>
-    </li>
-    <li class="active">
-        <img src="img/andromeda-orbit.jpg" alt="slide 2"/>
+    <section class="top-bar-section">
+        <!-- Left Nav Section -->
+        <ul class="left">
+            <li class="has-dropdown">
+                <a href="#">Registrations</a>
+                <ul class="dropdown">
+                    <li><a href="#">Category</a></li>
+                    <li><a href="#">Industry</a></li>
+                    <li><a href="#">Group</a></li>
+                </ul>
+            </li>
+        </ul>
+        <!-- Right Nav Section -->
+        <ul class="right">
+            <li><a href="#">Login</a></li>
+        </ul>
+    </section>
+</nav>
+<!--end responsive top bar-->
 
-        <div class="orbit-caption">
-            Caption Two.
-        </div>
-    </li>
-    <li>
-        <img src="img/launch-orbit.jpg" alt="slide 3"/>
+<!--start orbit slider-->
+<div id="demo">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div id="owl-demo" class="owl-carousel">
 
-        <div class="orbit-caption">
-            Caption Three.
+                    <div class="item"><img src="img/andromeda-orbit.jpg" alt="The Last of us"></div>
+                    <div class="item"><img src="img/launch-orbit.jpg" alt="GTA V"></div>
+                    <div class="item"><img src="img/satelite-orbit.jpg" alt="Mirror Edge"></div>
+
+                </div>
+            </div>
         </div>
-    </li>
-</ul>
-<!--link Jquery 2.1.4 js-->
-<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-<!--link foundation js-->
-<script type="text/javascript" src="js/foundation.min.js"></script>
+    </div>
+</div>
+<!--end orbit slider-->
+<script type='text/javascript' src="js/jquery-2.1.4.min.js"></script>
+<script type='text/javascript' src="js/foundation.js"></script>
+<script type='text/javascript' src="js/foundation.topbar.js"></script>
+<script type='text/javascript' src="js/owl.carousel.min.js"></script>
+<script>
+    $(document).foundation();
+    $(document).ready(function () {
+        $("#owl-demo").owlCarousel({
+            navigation: true,
+            slideSpeed: 300,
+            pagination: false,
+            paginationSpeed: 400,
+            singleItem: true,
+            autoPlay: 3000
+        });
+    });
+</script>
 </body>
 </html>
